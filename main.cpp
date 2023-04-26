@@ -457,7 +457,7 @@ int main() {
     }
     int experimentsCount;
     cin >> experimentsCount;
-    fprintf(pipe, "%s\n", "plot [-3:3][0:5] '-' with points, '-' with lines");
+    fprintf(pipe, "%s\n", "plot [-4:4][-30:30] '-' with points, '-' with points");
 
     vector<double> xValues;
     vector<vector<double>> yValues;
@@ -506,13 +506,14 @@ int main() {
     cout << "x~:" << endl;
     cout << res;
 
-    fprintf(pipe, "%f\t%f\n", 0.0, res.getTable()[0][0]);
-    tableType yValue = 0;
-    for (auto a: res.getTable()) {
-        yValue += a[0];
-    }
-    fprintf(pipe, "%f\t%f\n", 1.0, yValue);
 
+    for (double i = -3.0; i < 3.0; i += 0.05) {
+        tableType yValue = 0;
+        for (int j = 0; j < res.getTable().size(); j++) {
+            yValue += res.getTable()[j][0] * pow(i,j);
+        }
+        fprintf(pipe, "%f\t%f\n", i, yValue);
+    }
     fprintf(pipe, "%s\n", "e");
 
     fflush(pipe);

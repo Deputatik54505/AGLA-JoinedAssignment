@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/plato/CLionProjects/joinedAssignment1/cmake-build-debug",
-		"source" : "C:/Users/plato/CLionProjects/joinedAssignment1"
+		"build" : "C:/Users/plato/CLionProjects/joinedAssignment1/.git/AGLA-JoinedAssignment/cmake-build-debug",
+		"source" : "C:/Users/plato/CLionProjects/joinedAssignment1/.git/AGLA-JoinedAssignment"
 	},
 	"version" : 
 	{
